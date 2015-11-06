@@ -91,15 +91,23 @@ var _sendErrorToBugReport = function(error_to_send, tracker) {
     err            : error_to_send,
     extra_values   : extra_values,
     url            : endpoint_url,
-    background_send: false
+    background_send: false,
+    jsonWrapper    : (payload) => { return { report: payload }; },
+    headers        : {
+      'content-type': 'application/json',
+      'user-agent'  : 'azk',
+      'origin'      : 'azk',
+      'accept'      : '*/*',
+      'connection'  : 'keep-alive',
+    },
   };
 
   var bugSender = new lazy.BugSender();
 
-  // FIXME: remove this on end
-  /**/console.log('\n%% bugSender.send \n');/*-debug-*/
   return bugSender.send(options)
   .then((result) => {
+    try { result = JSON.stringify(result) } catch(_) {}
+
     log.debug(`[bug-report] bug report send to ${endpoint_url}. result: ${result}`);
   })
   .catch((err_result) => {
@@ -140,7 +148,8 @@ export function cli(args, cwd, ui = UI) {
         ui.fail(error);
         log.debug(`[bug-report] sending...`);
         return _sendErrorToBugReport(error, ui.tracker).then((result) => {
-          log.debug(`[bug-report] Force response ${result && result.body}`);
+          try { result = JSON.stringify(result) } catch(_) {}
+          log.debug(`[bug-report] ${config('report:url')} response ${result}`);
           ui.exit(error.code ? error.code : 127);
         });
 

@@ -3686,8 +3686,8 @@
       "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz"
     },
     "bug-report-sender": {
-      "version": "0.1.16",
-      "from": "bug-report-sender@0.1.16",
+      "version": "0.2.1",
+      "from": "bug-report-sender@>=0.2.0 <0.3.0",
       "dependencies": {
         "async": {
           "version": "1.5.0",
@@ -3697,6 +3697,7 @@
         "file-async": {
           "version": "0.1.4",
           "from": "file-async@>=0.1.4 <0.2.0",
+          "resolved": "https://registry.npmjs.org/file-async/-/file-async-0.1.4.tgz",
           "dependencies": {
             "bluebird": {
               "version": "3.0.5",
@@ -3752,7 +3753,7 @@
                         },
                         "inherits": {
                           "version": "2.0.1",
-                          "from": "inherits@>=2.0.0 <3.0.0",
+                          "from": "inherits@>=2.0.1 <2.1.0",
                           "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
                         },
                         "minimatch": {
@@ -3857,7 +3858,8 @@
             },
             "lodash._getnative": {
               "version": "3.9.1",
-              "from": "lodash._getnative@>=3.0.0 <4.0.0"
+              "from": "lodash._getnative@>=3.0.0 <4.0.0",
+              "resolved": "https://registry.npmjs.org/lodash._getnative/-/lodash._getnative-3.9.1.tgz"
             },
             "lodash.isarguments": {
               "version": "3.0.4",
@@ -3928,6 +3930,7 @@
             "bl": {
               "version": "1.0.0",
               "from": "bl@>=1.0.0 <1.1.0",
+              "resolved": "https://registry.npmjs.org/bl/-/bl-1.0.0.tgz",
               "dependencies": {
                 "readable-stream": {
                   "version": "2.0.4",
@@ -3941,7 +3944,7 @@
                     },
                     "inherits": {
                       "version": "2.0.1",
-                      "from": "inherits@>=2.0.0 <3.0.0",
+                      "from": "inherits@>=2.0.1 <2.1.0",
                       "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
                     },
                     "isarray": {
@@ -4048,9 +4051,9 @@
               "resolved": "https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.8.0.tgz"
             },
             "hawk": {
-              "version": "3.1.0",
+              "version": "3.1.1",
               "from": "hawk@>=3.1.0 <3.2.0",
-              "resolved": "https://registry.npmjs.org/hawk/-/hawk-3.1.0.tgz",
+              "resolved": "https://registry.npmjs.org/hawk/-/hawk-3.1.1.tgz",
               "dependencies": {
                 "hoek": {
                   "version": "2.16.3",
